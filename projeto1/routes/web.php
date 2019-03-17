@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return view("test");
+});
+
+Route::get('/test/{nome}/{sobrenome}', function ($nome, $sobrenome) {
+    return "<H1>Olá $nome $sobrenome</H1>";
+});
+
+Route::post('/add/{token}', function ($token) {
+    return "<H1>Post: $token</H1>";
+});
