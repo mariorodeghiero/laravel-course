@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +11,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\http\Request;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,4 +45,10 @@ Route::patch('/rest/hello', function () {
 
 Route::options('/rest/hello', function () {
     return "<H1>Option </H1>";
+});
+
+Route::post('/rest/print', function (Request $req) {
+    $nome = $req->input('name');
+    $idade = $req->input('age');
+    return "Hello $nome your age is $idade";
 });
