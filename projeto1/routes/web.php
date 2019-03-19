@@ -47,8 +47,19 @@ Route::options('/rest/hello', function () {
     return "<H1>Option </H1>";
 });
 
+// Passando parametros
 Route::post('/rest/print', function (Request $req) {
     $nome = $req->input('name');
     $idade = $req->input('age');
     return "Hello $nome your age is $idade";
 });
+
+// Nomeando Rotas
+Route::post('/rest/produtos', function () {
+    echo "<H1>Produtos:</H1>";
+})->name('Produtos');
+
+
+
+// Controllers
+Route::get('/rest/name', 'MyController@getName');
