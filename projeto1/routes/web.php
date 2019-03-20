@@ -60,17 +60,17 @@ Route::post('/rest/produtos', function () {
 })->name('Produtos');
 
 // Agrupando Rotas
-Route::prefix('app', function () {
+Route::prefix('app')->group(function () {
     Route::get('/', function () {
-        return view('welcome');
+        return "Main page!";
     });
-    Route::get('/profile', function () {
-        return view('welcome');
+    Route::get('profile', function () {
+        return "Profile page!";
     });
-    Route::get('/', function () {
-        return view('welcome');
+    Route::get('about', function () {
+        return "About page!";
     });
-})->name('app');
+});
 
 // Restringindo parametros
 Route::get('/namerule/{name}/{n}', function ($name, $n) {
