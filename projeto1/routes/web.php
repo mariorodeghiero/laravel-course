@@ -63,3 +63,9 @@ Route::post('/rest/produtos', function () {
 
 // Controllers
 Route::get('/rest/name', 'MyController@getName');
+
+Route::get('/rest/age', 'MyController@getAge');
+
+Route::get('/rest/multiply/{n1}/{n2}', 'MyController@multiply');
+
+Route::get('/rest/names/{id}', 'MyController@getNameById');
