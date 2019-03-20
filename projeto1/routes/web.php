@@ -59,6 +59,25 @@ Route::post('/rest/produtos', function () {
     echo "<H1>Produtos:</H1>";
 })->name('Produtos');
 
+// Agrupando Rotas
+Route::prefix('app', function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::get('/profile', function () {
+        return view('welcome');
+    });
+    Route::get('/', function () {
+        return view('welcome');
+    });
+})->name('app');
+
+// Restringindo parametros
+Route::get('/namerule/{name}/{n}', function ($name, $n) {
+    for ($i=0; $i < $n; $i++) {
+        echo "<h1>Hello, $name! $i</h1>";
+    };
+})->where('n', '[0-9]+')->where('name','[A-Za-z]+');
 
 
 // Controllers
