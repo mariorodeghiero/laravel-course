@@ -75,7 +75,11 @@ class clienteControlador extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $s = "Atualizar cliente com id $id: ";
+        $s .= "Nome: " . $request->input('nome') . " e ";
+        $s .= "Idade: " . $request->input('idade');
+        return response($s, 200);
+        // no formulario html é necessário add um _method PUT ou Patch e enviar via POST
     }
 
     /**
@@ -86,6 +90,6 @@ class clienteControlador extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "Apagado cliente com ID: $id";
     }
 }
