@@ -92,3 +92,16 @@ Route::get('/rest/names/{id}', 'MyController@getNameById');
 // Controller resource
 Route::resource('/cliente', 'clienteControlador');
 
+// Test iugu
+// foreach ($invoices as $invoice) {
+
+//     DB::table('iugu')->insert(['num_inscricao'=> $invoice->order_id, 'status_pagamento'=> $invoice->status, 'pagamento_gerado'=> $invoice->created_at, 'pagamento_vencimento'=> $invoice->due_date]);
+//     $cat = DB::table('iugu')->get();
+//     echo $cat;
+//     echo "<hr>";
+//     echo 'Create: '. $invoice->created_at . '<br>';
+//     echo 'Due date: '. $invoice->due_date . '<br>';
+//     echo 'SubscriptionID: '. $invoice->order_id . '<br>';
+//     echo 'Status: '. $invoice->status . '<br>';
+//     echo '<hr>';
+// }
